@@ -1,0 +1,47 @@
+@use "../../styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: variables.$black;
+  color: variables.$white;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 15% 15%;
+
+  &__title {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    &__logo {
+      font-weight: bold;
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    &__tag {
+      font-weight: 500;
+      font-size: 1.5rem;
+      cursor: default;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 1rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: variables.$black-hover;
+      }
+    }
+  }
+}
