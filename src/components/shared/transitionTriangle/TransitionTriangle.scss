@@ -1,0 +1,19 @@
+@use "../../../styles/variables";
+
+.transitionTriangle {
+  fill: variables.$black;
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  stroke: variables.$black;
+  stroke-width: 1;
+
+  &__rotated {
+    transform: rotate(180deg);
+  }
+
+  &__inverted {
+    transform: scaleX(-1);
+  }
+}

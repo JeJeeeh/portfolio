@@ -1,0 +1,11 @@
+@use "../../styles/variables";
+
+.skills {
+  background-color: variables.$black;
+  color: variables.$white;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}

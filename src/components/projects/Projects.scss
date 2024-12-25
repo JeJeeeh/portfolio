@@ -1,0 +1,10 @@
+@use "../../styles/variables";
+
+.projects {
+  color: variables.$black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  height: 50vh;
+}

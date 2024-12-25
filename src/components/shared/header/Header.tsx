@@ -1,12 +1,12 @@
-import CallIcon from "../icons/CallIcon";
-import HomeIcon from "../icons/HomeIcon";
-import PersonIcon from "../icons/PersonIcon";
-import StarIcon from "../icons/StarIcon";
+import CallIcon from "../../icons/CallIcon";
+import HomeIcon from "../../icons/HomeIcon";
+import PersonIcon from "../../icons/PersonIcon";
+import StarIcon from "../../icons/StarIcon";
 import "./Header.scss";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header" id="header">
       <div className="header__title">
         <div className="header__title__logo">JJE</div>
         <div className="header__title__tag">
