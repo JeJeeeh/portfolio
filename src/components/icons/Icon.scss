@@ -1,0 +1,11 @@
+@use "../../styles/variables";
+
+.icon {
+  &__black {
+    fill: variables.$black;
+  }
+
+  &__white {
+    fill: variables.$white;
+  }
+}

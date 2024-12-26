@@ -10,7 +10,7 @@ const Header = () => {
       <div className="header__title">
         <div className="header__title__logo">JJE</div>
         <div className="header__title__tag">
-          Front-end Developer | Creating Interactive UIs with React
+          Front-end Developer | Creating Interactive UIs
         </div>
       </div>
       <div className="header__menu">
@@ -23,7 +23,7 @@ const Header = () => {
           <div>Projects</div>
         </div>
         <div className="header__menu__item">
-          <PersonIcon />
+          <PersonIcon color="white" />
           <div>About Me</div>
         </div>
         <div className="header__menu__item">

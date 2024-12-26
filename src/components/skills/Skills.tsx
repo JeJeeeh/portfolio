@@ -1,6 +1,8 @@
+import { Parallax } from "react-scroll-parallax";
 import SectionTitle from "../shared/sectionTitle/SectionTitle";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
 import "./Skills.scss";
+import { useState } from "react";
 
 const Skills = () => {
   const titleData = {
@@ -11,12 +13,22 @@ const Skills = () => {
     ],
   };
 
+  const [style, setStyle] = useState<string>("");
+
   return (
     <div>
-      <TransitionTriangle id="top" />
       <div className="skills">
-        <SectionTitle {...titleData} />
-        <div>Skills item</div>
+        <Parallax
+          onProgressChange={(progress) => {
+            if (progress > 0.5) {
+              setStyle("section__hero");
+            } else {
+              setStyle("");
+            }
+          }}
+        >
+          <SectionTitle {...titleData} className={style} />
+        </Parallax>
       </div>
       <TransitionTriangle id="bottom" />
     </div>

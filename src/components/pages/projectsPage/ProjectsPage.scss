@@ -1,0 +1,11 @@
+@use "../../../styles/variables";
+
+.projects {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: variables.$white;
+}

@@ -1,4 +1,5 @@
 import SectionTitle from "../shared/sectionTitle/SectionTitle";
+import portrait from "../../assets/portrait.jpg";
 import "./About.scss";
 
 const About = () => {
@@ -43,7 +44,7 @@ const About = () => {
             <div>&lt;Click me for more information!&gt;</div>
           </div>
         </div>
-        <div className="about__right"></div>
+        <img className="about__right" src={portrait} alt="" />
       </div>
     </div>
   );

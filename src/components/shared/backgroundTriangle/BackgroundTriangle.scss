@@ -1,0 +1,7 @@
+@use "../../../styles/variables";
+
+.backgroundTriangle {
+  position: absolute;
+  width: 100%;
+  fill: variables.$black;
+}

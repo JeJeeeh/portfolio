@@ -1,3 +1,5 @@
+import GithubIcon from "../icons/GithubIcon";
+import LinkedinIcon from "../icons/LinkedinIcon";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
 import "./Footer.scss";
 const Footer = () => {
@@ -8,7 +10,23 @@ const Footer = () => {
       <TransitionTriangle id="footer" />
       <div className="footer">
         <div className="footer__top">
-          <div className="footer__top__social">Social Platform Links</div>
+          <div className="footer__top__social">
+            <div>Social Platform Links</div>
+            <div className="footer__top__social__container">
+              <a
+                href="https://github.com/JeJeeeh"
+                className="footer__top__social__item"
+              >
+                <GithubIcon color="white" />
+              </a>
+              <a
+                href="https://linkedin.com/in/jason-jonathan-47006a25b"
+                className="footer__top__social__item"
+              >
+                <LinkedinIcon color="white" />
+              </a>
+            </div>
+          </div>
           <div className="footer__top__links">
             <div>Go to</div>
             <div className="footer__top__links__container">
@@ -23,9 +41,7 @@ const Footer = () => {
           <div className="footer__bottom__title">
             <div className="footer__bottom__title__logo">JJE</div>
             <div className="footer__bottom__title__tag">
-              <div>
-                Front-end Developer - Creating Interactive UIs with React
-              </div>
+              <div>Front-end Developer | Creating Interactive UIs</div>
               <div>&copy; {year} Jason Jonathan Effendi</div>
             </div>
           </div>

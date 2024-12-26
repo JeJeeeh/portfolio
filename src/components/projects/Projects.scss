@@ -4,7 +4,16 @@
   color: variables.$black;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
-  padding: 2rem;
-  height: 50vh;
+  padding: 2rem 15rem;
+
+  &__footer {
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: variables.$accent;
+    }
+  }
 }
