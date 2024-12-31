@@ -1,5 +1,9 @@
-import { TechStack } from "../../projects/ProjectCard/ProjectCard";
+import { TechStack } from "../../../data/projects";
 import CsharpIcon from "../techIcons/CsharpIcon";
+import CssIcon from "../techIcons/CssIcon";
+import DockerIcon from "../techIcons/DockerIcon";
+import KubernetesIcon from "../techIcons/KubernetesIcon";
+import PhpIcon from "../techIcons/PhpIcon";
 import ReactIcon from "../techIcons/ReactIcon";
 import TypescriptIcon from "../techIcons/TypescriptIcon";
 import "./IconTooltip.scss";
@@ -9,37 +13,33 @@ interface Props {
 }
 
 const IconTooltip = ({ techStack }: Props) => {
-  const getIconWithTooltip = () => {
-    const tooltipText = techStack;
-
+  const getIcon = () => {
     switch (techStack) {
       case TechStack.react:
-        return (
-          <div className="tooltip">
-            <ReactIcon />
-            <span className="tooltip__text">{tooltipText}</span>
-          </div>
-        );
+        return <ReactIcon />;
       case TechStack.typescript:
-        return (
-          <div className="tooltip">
-            <TypescriptIcon />
-            <span className="tooltip__text">{tooltipText}</span>
-          </div>
-        );
+        return <TypescriptIcon />;
       case TechStack.csharp:
-        return (
-          <div className="tooltip">
-            <CsharpIcon />
-            <span className="tooltip__text">{tooltipText}</span>
-          </div>
-        );
+        return <CsharpIcon />;
+      case TechStack.css:
+        return <CssIcon />;
+      case TechStack.kubernetes:
+        return <KubernetesIcon />;
+      case TechStack.docker:
+        return <DockerIcon />;
+      case TechStack.php:
+        return <PhpIcon />;
       default:
         return <></>;
     }
   };
 
-  return <div>{getIconWithTooltip()}</div>;
+  return (
+    <div className="tooltip">
+      {getIcon()}
+      <span className="tooltip__text">{techStack}</span>
+    </div>
+  );
 };
 
 export default IconTooltip;

@@ -8,6 +8,9 @@
   border: none;
   stroke: variables.$black;
   stroke-width: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
 
   &__rotated {
     transform: rotate(180deg);

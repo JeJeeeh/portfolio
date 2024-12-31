@@ -1,0 +1,21 @@
+@use "../../../../../styles/variables";
+
+.svgEditor {
+  fill: none;
+  stroke: black;
+  stroke-width: 5px;
+
+  &__dot {
+    stroke: rgb(54, 99, 247);
+    fill: white;
+    stroke-width: 5px;
+  }
+
+  &__cursor {
+    fill: white;
+    stroke: #323232;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}

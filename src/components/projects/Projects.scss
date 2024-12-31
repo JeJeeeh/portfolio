@@ -10,10 +10,25 @@
 
   &__footer {
     font-size: 1.5rem;
+    opacity: 0;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
 
     &:hover {
       color: variables.$accent;
     }
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
