@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import CallIcon from "../../icons/CallIcon";
 import HomeIcon from "../../icons/HomeIcon";
 import PersonIcon from "../../icons/PersonIcon";
@@ -14,22 +15,42 @@ const Header = () => {
         </div>
       </div>
       <div className="header__menu">
-        <div className="header__menu__item">
-          <HomeIcon />
-          <div>Home</div>
-        </div>
-        <div className="header__menu__item">
-          <StarIcon />
-          <div>Projects</div>
-        </div>
-        <div className="header__menu__item">
-          <PersonIcon color="white" />
-          <div>About Me</div>
-        </div>
-        <div className="header__menu__item">
-          <CallIcon />
-          <div>Contact</div>
-        </div>
+        <NavLink to={"/"}>
+          {({ isActive }) => (
+            <div
+              className={`header__menu__item ${
+                isActive ? "header__menu__item--active" : ""
+              }`}
+            >
+              <HomeIcon />
+              <div>Home</div>
+            </div>
+          )}
+        </NavLink>
+        <NavLink to={"/projects"}>
+          {({ isActive }) => (
+            <div
+              className={`header__menu__item ${
+                isActive ? "header__menu__item--active" : ""
+              }`}
+            >
+              <StarIcon />
+              <div>Projects</div>
+            </div>
+          )}
+        </NavLink>
+        <NavLink to={"/about"}>
+          {({ isActive }) => (
+            <div
+              className={`header__menu__item ${
+                isActive ? "header__menu__item--active" : ""
+              }`}
+            >
+              <PersonIcon color="white" />
+              <div>About Me</div>
+            </div>
+          )}
+        </NavLink>
       </div>
     </div>
   );

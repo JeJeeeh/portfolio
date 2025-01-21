@@ -1,0 +1,15 @@
+@use "../../../../../styles/variables";
+
+.kitchenwares {
+  &__rect {
+    fill: transparent;
+    stroke: variables.$black;
+    stroke-width: 5;
+  }
+
+  &__line {
+    stroke: variables.$black;
+    stroke-width: 3;
+    fill: none;
+  }
+}

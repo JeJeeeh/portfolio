@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <Skills />
+      <Skills projectsData={projectsData} />
       <Projects projectsData={projectsData} />
       <About />
       <Contact />

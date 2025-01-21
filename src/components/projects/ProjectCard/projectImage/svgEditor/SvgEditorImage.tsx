@@ -3,9 +3,10 @@ import "./SvgEditorImage.scss";
 
 interface Props {
   playAnimation: boolean;
+  reset: boolean;
 }
 
-const SvgEditorImage = ({ playAnimation }: Props) => {
+const SvgEditorImage = ({ playAnimation, reset }: Props) => {
   const [topPoint, setTopPoint] = useState<{ x: number; y: number }>({
     x: 150,
     y: 20,
@@ -160,7 +161,6 @@ const SvgEditorImage = ({ playAnimation }: Props) => {
         setCursorPoint({ x: newCursorX, y: newCursorY });
         cursorPointRef.current = { x: newCursorX, y: newCursorY };
 
-        // Update the target point if applicable
         if (targetRef && setTargetPoint) {
           const newTargetX = targetRef.current.x + targetDeltaX;
           const newTargetY = targetRef.current.y + targetDeltaY;
@@ -185,7 +185,7 @@ const SvgEditorImage = ({ playAnimation }: Props) => {
             timeoutId = setTimeout(
               () => animateStep(steps[stepRef.current], 1000),
               500
-            ); // Delay before next step
+            );
           }
         }
       }, interval);
@@ -200,12 +200,6 @@ const SvgEditorImage = ({ playAnimation }: Props) => {
       }
       animateStep(steps[stepRef.current], 1000);
     } else {
-      // Cleanup when animation is stopped
-      stepRef.current = 0;
-      setTopPoint({ x: 150, y: 20 });
-      setRightPoint({ x: 280, y: 280 });
-      setLeftPoint({ x: 20, y: 280 });
-
       if (intervalId) clearInterval(intervalId);
       if (timeoutId) clearTimeout(timeoutId);
     }
@@ -216,6 +210,16 @@ const SvgEditorImage = ({ playAnimation }: Props) => {
       if (timeoutId) clearTimeout(timeoutId);
     };
   }, [playAnimation]);
+
+  useEffect(() => {
+    if (reset) {
+      stepRef.current = 0;
+      setTopPoint({ x: 150, y: 20 });
+      setRightPoint({ x: 280, y: 280 });
+      setLeftPoint({ x: 20, y: 280 });
+      setCursorPoint({ x: 20, y: 20 });
+    }
+  }, [reset]);
 
   const cursor = (x: number = 0, y: number = 0) => (
     <path
@@ -252,7 +256,6 @@ const SvgEditorImage = ({ playAnimation }: Props) => {
         r={10}
       />
 
-      {/* {cursor(cursorPoint.x, cursorPoint.y)} */}
       {cursor(cursorPoint.x, cursorPoint.y)}
     </svg>
   );

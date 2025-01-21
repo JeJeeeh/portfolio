@@ -6,6 +6,12 @@ export enum TechStack {
   "kubernetes" = "Kubernetes",
   "docker" = "Docker",
   "php" = "PHP",
+  "java" = "Java",
+  "node" = "NodeJS",
+  "cplus" = "C++",
+  "prisma" = "Prisma",
+  "express" = "ExpressJS",
+  "mysql" = "MySQL",
 }
 
 export type ProjectType =
@@ -34,14 +40,19 @@ export const projectsData: { [key: string]: ProjectData } = {
     country: "The Netherlands",
     techStacks: [TechStack.react, TechStack.typescript, TechStack.css],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia cupiditate quasi numquam rerum consequuntur nemo, ducimus, eos aliquam, et sequi. Adipisci doloribus nisi sapiente pariatur aperiam numquam at modi.",
+      "Integrated a new feature for Template Designer, where now users can use and customize SVGs. This feature allows customizations such as colour and shape customization. Shape customization works by the user drag dots around the SVG and its shape will follow based on the interaction.",
   },
-  "svg-animation": {
-    title: "SVG Animation",
+  "portfolio-website": {
+    title: "Portfolio Website",
     type: "Personal",
-    techStacks: [TechStack.react],
+    techStacks: [
+      TechStack.react,
+      TechStack.css,
+      TechStack.typescript,
+      TechStack.node,
+    ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia cupiditate quasi numquam rerum consequuntur nemo, ducimus, eos aliquam, et sequi. Adipisci doloribus nisi sapiente pariatur aperiam numquam at modi.",
+      "A personal portfolio website built with React and SCSS to showcase my projects, skills, and experience. The project emphasizes responsive design, smooth user interactions, and modern UI/UX principles. Features include dynamic project displays, SVG customization, and reusable code structure.",
   },
   kitchenwares: {
     title: "KitchenWares",
@@ -50,7 +61,7 @@ export const projectsData: { [key: string]: ProjectData } = {
     country: "The Netherlands",
     techStacks: [TechStack.csharp, TechStack.kubernetes, TechStack.docker],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia cupiditate quasi numquam rerum consequuntur nemo, ducimus, eos aliquam, et sequi. Adipisci doloribus nisi sapiente pariatur aperiam numquam at modi.",
+      "A project that focuses on the implementation of micro-service architecture. This project uses Kubernetes, with pipeline for automated integration testing and load testing, which then does deployment on success. This project also used Google Cloud, for learning how to implement cloud technologies into web applications.",
   },
   "dynamic-question-creator": {
     title: "Dynamic Question Creator",
@@ -60,7 +71,7 @@ export const projectsData: { [key: string]: ProjectData } = {
     client: "Institut Sains dan Teknologi Terpadu Surabaya",
     techStacks: [TechStack.react, TechStack.typescript],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia cupiditate quasi numquam rerum consequuntur nemo, ducimus, eos aliquam, et sequi. Adipisci doloribus nisi sapiente pariatur aperiam numquam at modi.",
+      "Creating a dynamic question maker for handling weekly tests using React Typescript. This question maker can take texts, images, or code segments for questions, and various types for answers, such as texts, multiple choices or multiple options.",
   },
   "fruit-management": {
     title: "Saribuah",
@@ -68,8 +79,22 @@ export const projectsData: { [key: string]: ProjectData } = {
     client: "Adi Winoto",
     city: "Surabaya",
     country: "Indonesia",
-    techStacks: [TechStack.react, TechStack.typescript],
+    techStacks: [TechStack.php, TechStack.mysql],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia cupiditate quasi numquam rerum consequuntur nemo, ducimus, eos aliquam, et sequi. Adipisci doloribus nisi sapiente pariatur aperiam numquam at modi.",
+      "Creating a centralized fruit management system using Laravel, that allows different store branches to use this application as its core platform for managing inventories and transactions. ",
+  },
+  "bible-api": {
+    title: "Bible API",
+    type: "School",
+    city: "Surabaya",
+    country: "Indonesia",
+    techStacks: [
+      TechStack.typescript,
+      TechStack.node,
+      TechStack.prisma,
+      TechStack.express,
+    ],
+    description:
+      "A school project that focuses integrating third party APIs to the backend, while also creating a secure and efficient service. This project uses ExpressJS as the main framework, Prisma for database management, and JWT tokens for authentications",
   },
 };

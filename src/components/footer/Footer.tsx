@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import GithubIcon from "../icons/GithubIcon";
 import LinkedinIcon from "../icons/LinkedinIcon";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
@@ -30,10 +31,15 @@ const Footer = () => {
           <div className="footer__top__links">
             <div>Go to</div>
             <div className="footer__top__links__container">
-              <div className="footer__top__links__item">Home</div>
-              <div className="footer__top__links__item">Projects</div>
-              <div className="footer__top__links__item">About Me</div>
-              <div className="footer__top__links__item">Contact</div>
+              <Link to={"/"}>
+                <div className="footer__top__links__item">Home</div>
+              </Link>
+              <Link to={"/projects"}>
+                <div className="footer__top__links__item">Projects</div>
+              </Link>
+              <Link to={"/about"}>
+                <div className="footer__top__links__item">About Me</div>
+              </Link>
             </div>
           </div>
         </div>

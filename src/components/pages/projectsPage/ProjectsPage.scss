@@ -5,7 +5,12 @@
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  color: variables.$white;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+
+  &__card {
+    grid-column: span 12;
+  }
 }

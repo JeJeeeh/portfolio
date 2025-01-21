@@ -1,6 +1,6 @@
 @use "../../../styles/variables";
 
-.projectCard {
+.projectCardDisplay {
   display: flex;
   width: 100%;
   padding: 2rem;
@@ -10,6 +10,7 @@
   box-shadow: 5px 5px 5px gray;
   opacity: 1;
   transition: opacity 2s ease-in;
+  grid-column: span 12;
 
   &__display {
     border-radius: 10px;

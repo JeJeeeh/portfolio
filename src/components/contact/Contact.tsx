@@ -1,3 +1,4 @@
+import { Parallax } from "react-scroll-parallax";
 import MailIcon from "../icons/MailIcon";
 import WhatsappIcon from "../icons/WhatsappIcon";
 import SectionTitle from "../shared/sectionTitle/SectionTitle";
@@ -9,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
+    <Parallax className="contact" opacity={[0, 1]} easing={[0.24, 1, 0.4, 1]}>
       <SectionTitle {...titleData} />
       <div className="contact__container">
         <div className="contact__content">
@@ -25,7 +26,7 @@ const Contact = () => {
           <div className="contact__info__container">
             <div className="contact__info__item">
               <MailIcon color="black" />
-              Email: jasonjonathan@gmail.com
+              Email: jasonjonathaneffendi@gmail.com
             </div>
             <div className="contact__info__item">
               <WhatsappIcon color="black" />
@@ -38,7 +39,7 @@ const Contact = () => {
           with you!
         </div>
       </div>
-    </div>
+    </Parallax>
   );
 };
 

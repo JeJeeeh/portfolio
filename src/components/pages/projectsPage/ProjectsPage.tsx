@@ -1,4 +1,5 @@
-import BackgroundTriangle from "../../shared/backgroundTriangle/BackgroundTriangle";
+import { projectsData } from "../../../data/projects";
+import ProjectCard from "../../projects/ProjectCard/ProjectCard";
 import SectionTitle from "../../shared/sectionTitle/SectionTitle";
 import "./ProjectsPage.scss";
 
@@ -10,8 +11,11 @@ const ProjectsPage = () => {
   return (
     <div className="projects">
       <SectionTitle {...titleData} />
-      <BackgroundTriangle />
-      <div className="content">content here</div>
+      <div className="content">
+        {Object.keys(projectsData).map((project, index) => (
+          <ProjectCard key={index} slug={project} {...projectsData[project]} />
+        ))}
+      </div>
     </div>
   );
 };

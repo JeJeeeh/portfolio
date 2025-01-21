@@ -3,6 +3,7 @@ import SectionTitle from "../shared/sectionTitle/SectionTitle";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import "./Projects.scss";
 import { ProjectData } from "../../data/projects";
+import { Link } from "react-router";
 
 interface Props {
   projectsData: { [key: string]: ProjectData };
@@ -57,7 +58,7 @@ const Projects = ({ projectsData = {} }: Props) => {
         easing={[0.2, 1, 0, 1]}
         className="projects__footer"
       >
-        &lt;See more projects here!&gt;
+        <Link to={"/projects"}>&lt;See more projects here!&gt;</Link>
       </Parallax>
     </div>
   );

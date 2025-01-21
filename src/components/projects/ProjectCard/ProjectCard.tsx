@@ -3,6 +3,7 @@ import { TechStack } from "../../../data/projects";
 import IconTooltip from "../../icons/IconTooltip/IconTooltip";
 import "./ProjectCard.scss";
 import ProjectImage from "./projectImage/ProjectImage";
+import { Link } from "react-router";
 
 interface Props {
   title: string;
@@ -48,25 +49,28 @@ const ProjectCard = ({ title, techStacks, description, slug }: Props) => {
   }, []);
 
   return (
-    <div className={`projectCard`} ref={projectCardRef}>
-      <div className="projectCard__display">
+    <div className={`projectCardDisplay`} ref={projectCardRef}>
+      <div className="projectCardDisplay__display">
         <ProjectImage
           slug={slug}
           playAnimation={parentOpacity > 0.9 ? true : false}
+          reset={parentOpacity === 0 ? true : false}
         />
       </div>
-      <div className="projectCard__info">
-        <div className="projectCard__info__top">
-          <div className="projectCard__info__title">{title}</div>
-          <div className="projectCard__info__tech">
+      <div className="projectCardDisplay__info">
+        <div className="projectCardDisplay__info__top">
+          <div className="projectCardDisplay__info__title">{title}</div>
+          <div className="projectCardDisplay__info__tech">
             {techStacks.map((techStack, index) => (
               <IconTooltip key={index} techStack={techStack} />
             ))}
           </div>
-          <div className="projectCard__info__desc">{description}</div>
+          <div className="projectCardDisplay__info__desc">{description}</div>
         </div>
-        <div className="projectCard__info__detail">
-          <div className="projectCard__info__button">See more</div>
+        <div className="projectCardDisplay__info__detail">
+          <Link to={slug}>
+            <div className="projectCardDisplay__info__button">See more</div>
+          </Link>
         </div>
       </div>
     </div>
