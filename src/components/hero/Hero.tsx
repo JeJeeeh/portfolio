@@ -30,20 +30,6 @@ const Hero = () => {
   };
 
   return (
-    // <div className="hero">
-    //   <div className="hero__container">
-    //     <img src={heroPortrait} alt="" className="hero__container__profile" />
-    //     <div className="hero__container__description">
-    //       <div>
-    //         Hi, my name is Jason! I'm a Front-end Developer dedicated to
-    //       </div>
-    //       <div>
-    //         bring ideas to life with modern web technologies using React
-    //       </div>
-    //       <div>Let's create something amazing together!</div>
-    //     </div>
-    //   </div>
-    // </div>
     <ParallaxBanner layers={[hero, transitionTriangle]} className="hero" />
   );
 };

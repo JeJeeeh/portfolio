@@ -10,9 +10,10 @@ interface Props {
   techStacks: TechStack[];
   description: string;
   slug: string;
+  link: string;
 }
 
-const ProjectCard = ({ title, techStacks, description, slug }: Props) => {
+const ProjectCard = ({ title, techStacks, description, slug, link }: Props) => {
   const projectCardRef = useRef<HTMLDivElement | null>(null);
   const [parentOpacity, setParentOpacity] = useState<number>(0);
 
@@ -67,11 +68,11 @@ const ProjectCard = ({ title, techStacks, description, slug }: Props) => {
           </div>
           <div className="projectCardDisplay__info__desc">{description}</div>
         </div>
-        <div className="projectCardDisplay__info__detail">
-          <Link to={slug}>
+        {/* <div className="projectCardDisplay__info__detail">
+          <Link to={link}>
             <div className="projectCardDisplay__info__button">See more</div>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

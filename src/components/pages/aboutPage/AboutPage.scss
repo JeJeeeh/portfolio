@@ -1,0 +1,134 @@
+@use "../../../styles/variables";
+
+.aboutPage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+
+  .pageContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .aboutContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+
+    .containerText {
+      grid-column: span 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .textTitle {
+        font-size: 2rem;
+      }
+      .textDescription {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+
+    .containerItems {
+      grid-column: span 6;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+
+      .itemContainer {
+        border-radius: 10px;
+        grid-column: span 4;
+        background-color: variables.$white;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+
+        .itemDot {
+          border-radius: 50%;
+          width: 10px;
+          aspect-ratio: 1/1;
+          background-color: variables.$black;
+        }
+      }
+    }
+  }
+
+  .testimonialsContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .testimonialsText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .textTitle {
+        font-size: 2rem;
+      }
+
+      .textDescription {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+
+    .testimonialCards {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+
+      .testimonialCard {
+        background-color: variables.$white;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        grid-column: span 6;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        border-radius: 20px;
+
+        .cardProfile {
+          grid-column: span 3;
+          aspect-ratio: 1/1;
+          background-color: gray;
+          border-radius: 50%;
+        }
+
+        .cardInfo {
+          grid-column: span 9;
+          display: flex;
+          flex-direction: column;
+
+          .cardName {
+            font-size: 1.2rem;
+
+            &__link {
+              text-decoration: underline;
+            }
+          }
+
+          .cardPosition {
+            color: rgb(63, 63, 63);
+
+            .link {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

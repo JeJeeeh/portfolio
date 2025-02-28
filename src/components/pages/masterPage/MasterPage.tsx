@@ -7,7 +7,9 @@ const MasterPage = () => {
   return (
     <div className="container">
       <Header />
-      <Outlet />
+      <div className="master__content">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

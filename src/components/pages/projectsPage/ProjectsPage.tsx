@@ -9,7 +9,7 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="projects">
+    <div className="projectsPage">
       <SectionTitle {...titleData} />
       <div className="content">
         {Object.keys(projectsData).map((project, index) => (

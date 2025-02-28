@@ -1,11 +1,18 @@
 @use "../../../styles/variables";
 
-.projects {
+.projectsPage {
   position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .content {
-  width: 100%;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 2rem;

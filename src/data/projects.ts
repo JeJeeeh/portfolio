@@ -14,12 +14,64 @@ export enum TechStack {
   "mysql" = "MySQL",
 }
 
+export const techStacks: string[] = [
+  "React",
+  "TypeScript",
+  "C#",
+  "CSS",
+  "PHP",
+  "Java",
+  "C++",
+  "Prisma",
+  "ExpressJS",
+  "MySQL",
+  "Python",
+  "MongoDB",
+  "Laravel",
+  ".NET",
+  "RabbitMQ",
+];
+
 export type ProjectType =
   | "Personal"
   | "Internship"
   | "Freelance"
   | "School"
   | "Organisation";
+
+export enum Tools {
+  "git" = "Git",
+  "githubActions" = "Github Actions",
+  "npm" = "npm",
+  "jmeter" = "JMeter",
+  "postman" = "Postman",
+  "docker" = "Docker",
+  "kubernetes" = "Kubernetes",
+  "gcloud" = "Google Cloud",
+  "figma" = "Figma",
+  "prometheus" = "Prometheus",
+  "grafana" = "Grafana",
+  "sqlworkbench" = "SQL Workbench",
+  "phpmyadmin" = "phpMyAdmin",
+  "mongodbcompass" = "MongoDB Compass",
+}
+
+export const tools: string[] = [
+  "Git",
+  "GitHub Actions",
+  "npm",
+  "JMeter",
+  "Postman",
+  "Docker",
+  "Kubernetes",
+  "Google Cloud",
+  "Figma",
+  "Prometheus",
+  "Grafana",
+  "SQL Workbench",
+  "phpMyAdmin",
+  "MongoDB Compass",
+];
 
 export interface ProjectData {
   title: string;
@@ -29,6 +81,7 @@ export interface ProjectData {
   country?: string;
   techStacks: TechStack[];
   description: string;
+  link: string;
 }
 
 export const projectsData: { [key: string]: ProjectData } = {
@@ -41,6 +94,7 @@ export const projectsData: { [key: string]: ProjectData } = {
     techStacks: [TechStack.react, TechStack.typescript, TechStack.css],
     description:
       "Integrated a new feature for Template Designer, where now users can use and customize SVGs. This feature allows customizations such as colour and shape customization. Shape customization works by the user drag dots around the SVG and its shape will follow based on the interaction.",
+    link: "/projects/svg-editor-in-template-designer",
   },
   "portfolio-website": {
     title: "Portfolio Website",
@@ -52,16 +106,18 @@ export const projectsData: { [key: string]: ProjectData } = {
       TechStack.node,
     ],
     description:
-      "A personal portfolio website built with React and SCSS to showcase my projects, skills, and experience. The project emphasizes responsive design, smooth user interactions, and modern UI/UX principles. Features include dynamic project displays, SVG customization, and reusable code structure.",
+      "A personal portfolio website built with React and SCSS to showcase my projects, skills, and experience. The project emphasizes responsive design, smooth user interactions, and modern UI/UX principles. Features include dynamic project displays, SVG animations, and reusable code structure.",
+    link: "/projects/portfolio-website",
   },
   kitchenwares: {
     title: "KitchenWares",
     type: "School",
     city: "Eindhoven",
     country: "The Netherlands",
-    techStacks: [TechStack.csharp, TechStack.kubernetes, TechStack.docker],
+    techStacks: [TechStack.csharp, TechStack.react],
     description:
       "A project that focuses on the implementation of micro-service architecture. This project uses Kubernetes, with pipeline for automated integration testing and load testing, which then does deployment on success. This project also used Google Cloud, for learning how to implement cloud technologies into web applications.",
+    link: "/projects/kitchenwares",
   },
   "dynamic-question-creator": {
     title: "Dynamic Question Creator",
@@ -72,6 +128,7 @@ export const projectsData: { [key: string]: ProjectData } = {
     techStacks: [TechStack.react, TechStack.typescript],
     description:
       "Creating a dynamic question maker for handling weekly tests using React Typescript. This question maker can take texts, images, or code segments for questions, and various types for answers, such as texts, multiple choices or multiple options.",
+    link: "/projects/dynamic-question-creator",
   },
   "fruit-management": {
     title: "Saribuah",
@@ -82,6 +139,7 @@ export const projectsData: { [key: string]: ProjectData } = {
     techStacks: [TechStack.php, TechStack.mysql],
     description:
       "Creating a centralized fruit management system using Laravel, that allows different store branches to use this application as its core platform for managing inventories and transactions. ",
+    link: "/projects/fruit-management",
   },
   "bible-api": {
     title: "Bible API",
@@ -96,5 +154,6 @@ export const projectsData: { [key: string]: ProjectData } = {
     ],
     description:
       "A school project that focuses integrating third party APIs to the backend, while also creating a secure and efficient service. This project uses ExpressJS as the main framework, Prisma for database management, and JWT tokens for authentications",
+    link: "https://github.com/JeJeeeh/project-soa",
   },
 };

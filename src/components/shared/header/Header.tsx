@@ -1,5 +1,4 @@
-import { NavLink } from "react-router";
-import CallIcon from "../../icons/CallIcon";
+import { Link, NavLink } from "react-router";
 import HomeIcon from "../../icons/HomeIcon";
 import PersonIcon from "../../icons/PersonIcon";
 import StarIcon from "../../icons/StarIcon";
@@ -9,7 +8,9 @@ const Header = () => {
   return (
     <div className="header" id="header">
       <div className="header__title">
-        <div className="header__title__logo">JJE</div>
+        <Link to={"/"}>
+          <div className="header__title__logo">JJE</div>
+        </Link>
         <div className="header__title__tag">
           Front-end Developer | Creating Interactive UIs
         </div>

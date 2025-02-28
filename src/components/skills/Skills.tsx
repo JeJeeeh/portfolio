@@ -3,8 +3,8 @@ import SectionTitle from "../shared/sectionTitle/SectionTitle";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
 import { ProjectData } from "../../data/projects";
 import { useEffect, useState } from "react";
-import "./Skills.scss";
 import IconTooltip from "../icons/IconTooltip/IconTooltip";
+import "./Skills.scss";
 
 interface Props {
   projectsData: { [key: string]: ProjectData };
