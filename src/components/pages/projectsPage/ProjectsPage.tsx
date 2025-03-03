@@ -11,9 +11,15 @@ const ProjectsPage = () => {
   return (
     <div className="projectsPage">
       <SectionTitle {...titleData} />
-      <div className="content">
+      <div className="projectsPageContainer">
         {Object.keys(projectsData).map((project, index) => (
-          <ProjectCard key={index} slug={project} {...projectsData[project]} />
+          <div className="projectCardContainer">
+            <ProjectCard
+              key={index}
+              slug={project}
+              {...projectsData[project]}
+            />
+          </div>
         ))}
       </div>
     </div>

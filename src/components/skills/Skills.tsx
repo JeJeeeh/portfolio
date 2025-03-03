@@ -50,17 +50,17 @@ const Skills = ({ projectsData }: Props) => {
         <Parallax opacity={[0, 1]} easing={[0.24, 1, 0.4, 1]}>
           <SectionTitle {...titleData} />
         </Parallax>
-        <div className="skills__container">
+        <div className="skillsContainer">
           <Parallax
             opacity={[0, 1]}
             easing={[0.24, 1, 0.4, 1]}
-            className="skills__tableTitle"
+            className="skillsTableTitle"
           >
             Most Used Tech Stack Chart
           </Parallax>
-          <div className="skills__tableContainer">
+          <div className="skillsTableContainer">
             <Parallax
-              className="skills__table"
+              className="skillsTable"
               onProgressChange={(progress) => {
                 if (progress <= 0.5) {
                   setHeightPercent(progress * 2);
@@ -72,9 +72,9 @@ const Skills = ({ projectsData }: Props) => {
               {displayedTech.map((project, index) => {
                 const lineHeight = 3 * project[1] * heightPercent;
                 return (
-                  <div className="skills__table__item" key={index}>
-                    <div className="skills__table__item__container">
-                      <div className="skills__table__item__icon">
+                  <div className="skillsTableItem" key={index}>
+                    <div className="skillsItemContainer">
+                      <div className="skillsItemIcon">
                         <IconTooltip
                           techStack={project[0]}
                           withTooltip={false}
@@ -83,7 +83,7 @@ const Skills = ({ projectsData }: Props) => {
                       </div>
                     </div>
                     <div
-                      className="skills__table__item__line"
+                      className="skillsItemLine"
                       style={{
                         height: `${lineHeight}rem`,
                       }}
@@ -93,18 +93,18 @@ const Skills = ({ projectsData }: Props) => {
               })}
             </Parallax>
           </div>
-          <div className="skills__tableDescription">Technology Used</div>
+          <div className="skillsTableDescription">Technology Used</div>
         </div>
-        <div className="skills__other">
-          <div className="skills__other__title">
+        <div className="skillsOther">
+          <div className="skillsOtherTitle">
             <div>
               In addition to the technologies mentioned above, I have hands-on
             </div>
             <div>experience with these tools and technologies.</div>
           </div>
-          <div className="skills__other__container">
+          <div className="skillsOtherContainer">
             {otherTech.map((tech, index) => (
-              <div key={index} className="skills__other__item">
+              <div key={index} className="skillsOtherItem">
                 <IconTooltip techStack={tech} withTooltip={false} />
                 {tech}
               </div>

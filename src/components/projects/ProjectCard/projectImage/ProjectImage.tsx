@@ -10,11 +10,16 @@ interface Props {
 
 const ProjectImage = ({ slug, playAnimation, reset }: Props) => {
   const getImage = (slug: string) => {
+    const imageProps = {
+      playAnimation: playAnimation,
+      reset: reset,
+    };
+
     switch (slug) {
       case "svg-editor-in-template-designer":
-        return <SvgEditorImage playAnimation={playAnimation} reset={reset} />;
+        return <SvgEditorImage {...imageProps} />;
       case "kitchenwares":
-        return <KitchenwaresImage />;
+        return <KitchenwaresImage {...imageProps} />;
       default:
         return <div></div>;
     }

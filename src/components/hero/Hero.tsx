@@ -5,14 +5,14 @@ import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle"
 
 const Hero = () => {
   const hero: BannerLayer = {
-    className: "hero__container",
+    className: "heroContainer",
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     children: (
-      <div className="hero__container">
-        <img src={heroPortrait} alt="" className="hero__profile" />
-        <div className={"hero__description"}>
+      <div className="heroContainer">
+        <img src={heroPortrait} alt="" className="heroProfile" />
+        <div className={"heroDescription"}>
           <div>
             Hi, my name is Jason! I'm a Front-end Developer dedicated to
           </div>
@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   const transitionTriangle: BannerLayer = {
-    className: "hero__triangle",
+    className: "heroTriangle",
     shouldAlwaysCompleteAnimation: true,
     children: <TransitionTriangle id="top" />,
   };

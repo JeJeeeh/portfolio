@@ -1,39 +1,70 @@
 @use "../../styles/variables";
+@use "../../styles/mixins";
 
 .contact {
-  padding: 5rem 8rem;
+  padding: 2rem;
 
-  &__container {
+  @include mixins.respond-to("md") {
+    padding: 5rem 8rem;
+  }
+
+  .contactContainer {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     text-align: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
+
+    @include mixins.respond-to("md") {
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .contactContainerContent {
+      font-size: 0.8rem;
+
+      @include mixins.respond-to("md") {
+        font-size: 1.5rem;
+      }
+    }
   }
 
-  &__content {
-    font-size: 1.5rem;
-  }
-
-  &__info {
+  .contactInfo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
-    &__title {
-      font-size: 1.2rem;
+    .contactInfoTitle {
+      font-size: 1rem;
+
+      @include mixins.respond-to("md") {
+        font-size: 1.2rem;
+      }
     }
 
-    &__container {
+    .contactInfoContainer {
       display: flex;
       justify-content: center;
       gap: 2rem;
-    }
 
-    &__item {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
+      .contactInfoItem {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        font-size: 0.7rem;
+
+        @include mixins.respond-to("md") {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .contactContent {
+    font-size: 0.8rem;
+
+    @include mixins.respond-to("md") {
+      font-size: 1.5rem;
     }
   }
 }

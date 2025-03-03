@@ -1,4 +1,5 @@
 @use "../../styles/variables";
+@use "../../styles/mixins";
 
 .hero {
   width: 100vw;
@@ -6,7 +7,7 @@
   flex-direction: column;
   height: 90vh;
 
-  &__container {
+  .heroContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,18 +15,31 @@
     gap: 1rem;
   }
 
-  &__profile {
-    height: 200px;
-    width: 200px;
+  .heroProfile {
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
+
+    @include mixins.respond-to("sm") {
+      height: 200px;
+      width: 200px;
+    }
   }
 
-  &__description {
+  .heroDescription {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+
+    @include mixins.respond-to("sm") {
+      font-size: 1rem;
+    }
+
+    @include mixins.respond-to("md") {
+      font-size: 1.5rem;
+    }
   }
 
-  &__triangle {
+  .heroTriangle {
     height: 100%;
     display: flex;
     flex-direction: column-reverse;

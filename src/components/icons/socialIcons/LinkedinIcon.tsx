@@ -1,4 +1,4 @@
-import "./Icon.scss";
+import "../Icon.scss";
 
 interface Props {
   color: string;
@@ -12,6 +12,7 @@ const LinkedinIcon = ({ color }: Props) => {
       viewBox="0 0 24 24"
       fill="FFFFFF"
       xmlns="http://www.w3.org/2000/svg"
+      className="icon icon__linkedIn"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

@@ -21,12 +21,12 @@ const About = () => {
         <SectionTitle {...titleData} />
       </Parallax>
       <Parallax
-        className="about__container"
+        className="aboutContainer"
         opacity={[0, 1]}
         easing={[0.5, 1, 0, 1]}
       >
-        <div className="about__left">
-          <div className="about__left__content">
+        <div className="aboutLeft">
+          <div className="leftContent">
             <div>
               Hi, my name is Jason Jonathan Effendi and I am from Indonesia!
             </div>
@@ -42,7 +42,7 @@ const About = () => {
             <Parallax
               onProgressChange={(progress) => {
                 if (progress > 0.3) {
-                  setAccent("about__left__accent");
+                  setAccent("leftAccent");
                 } else {
                   setAccent(null);
                 }
@@ -54,28 +54,25 @@ const About = () => {
               <div className={accent ? accent : ""}>Technology!</div>
             </Parallax>
           </div>
-          <div className="about__left__small">
+          <div className="leftSmall">
             <div>Here are some things that I enjoy when I am not working</div>
           </div>
-          <div className="about__left__container">
-            <div className="about__left__container__item">
+          <div className="leftContainer">
+            <div className="aboutContainerItem">
               <GameIcon /> Gaming
             </div>
-            <div className="about__left__container__item">
+            <div className="aboutContainerItem">
               <CookingIcon /> Cooking
             </div>
-            <div className="about__left__container__item">
+            <div className="aboutContainerItem">
               <GymIcon /> Fitness
             </div>
-            <div className="about__left__container__item">
+            <div className="aboutContainerItem">
               <MusicIcon /> Music
             </div>
           </div>
-          <div className="about__left__small about__left__clickable">
-            <div>&lt;Click me for more information!&gt;</div>
-          </div>
         </div>
-        <img className="about__right" src={portrait} alt="" />
+        <img className="aboutRight" src={portrait} alt="" />
       </Parallax>
     </div>
   );

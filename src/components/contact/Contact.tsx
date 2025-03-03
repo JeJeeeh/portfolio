@@ -12,8 +12,8 @@ const Contact = () => {
   return (
     <Parallax className="contact" opacity={[0, 1]} easing={[0.24, 1, 0.4, 1]}>
       <SectionTitle {...titleData} />
-      <div className="contact__container">
-        <div className="contact__content">
+      <div className="contactContainer">
+        <div className="contactContainerContent">
           <div>
             I'd love to hear from you! Whether you want to collaborate, have a
           </div>
@@ -21,20 +21,20 @@ const Contact = () => {
             question, or just want to say hello, feel free to reach out.
           </div>
         </div>
-        <div className="contact__info">
-          <div className="contact__info__title">Direct contact info</div>
-          <div className="contact__info__container">
-            <div className="contact__info__item">
+        <div className="contactInfo">
+          <div className="contactInfoTitle">Direct contact info</div>
+          <div className="contactInfoContainer">
+            <div className="contactInfoItem">
               <MailIcon color="black" />
               Email: jasonjonathaneffendi@gmail.com
             </div>
-            <div className="contact__info__item">
+            <div className="contactInfoItem">
               <WhatsappIcon color="black" />
               Whatsapp: (+31) 639717225
             </div>
           </div>
         </div>
-        <div className="contact__content">
+        <div className="contactContent">
           Let's create something amazing together. I look forward connecting
           with you!
         </div>

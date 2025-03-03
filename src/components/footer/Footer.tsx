@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import GithubIcon from "../icons/GithubIcon";
-import LinkedinIcon from "../icons/LinkedinIcon";
+import GithubIcon from "../icons/socialIcons/GithubIcon";
+import LinkedinIcon from "../icons/socialIcons/LinkedinIcon";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
 import "./Footer.scss";
 const Footer = () => {
@@ -10,44 +10,43 @@ const Footer = () => {
     <div>
       <TransitionTriangle id="footer" />
       <div className="footer">
-        <div className="footer__top">
-          <div className="footer__top__social">
+        <div className="footerTop">
+          <div className="topSocial">
             <div>Social Platform Links</div>
-            <div className="footer__top__social__container">
-              <a
-                href="https://github.com/JeJeeeh"
-                className="footer__top__social__item"
-              >
+            <div className="topSocialContainer">
+              <a href="https://github.com/JeJeeeh" className="topItem">
                 <GithubIcon color="white" />
               </a>
               <a
                 href="https://linkedin.com/in/jason-jonathan-47006a25b"
-                className="footer__top__social__item"
+                className="topItem"
               >
                 <LinkedinIcon color="white" />
               </a>
             </div>
           </div>
-          <div className="footer__top__links">
+          <div className="topLinks">
             <div>Go to</div>
-            <div className="footer__top__links__container">
+            <div className="topLinksContainer">
               <Link to={"/"}>
-                <div className="footer__top__links__item">Home</div>
+                <div className="topLinksItem">Home</div>
               </Link>
               <Link to={"/projects"}>
-                <div className="footer__top__links__item">Projects</div>
+                <div className="topLinksItem">Projects</div>
               </Link>
               <Link to={"/about"}>
-                <div className="footer__top__links__item">About Me</div>
+                <div className="topLinksItem">About Me</div>
               </Link>
             </div>
           </div>
         </div>
-        <div className="footer__bottom">
-          <div className="footer__bottom__title">
-            <div className="footer__bottom__title__logo">JJE</div>
-            <div className="footer__bottom__title__tag">
-              <div>Front-end Developer | Creating Interactive UIs</div>
+        <div className="footerBottom">
+          <div className="bottomTitle">
+            <div className="bottomTitleLogo">JJE</div>
+            <div className="bottomTitleTag">
+              <div className="tagDescription">
+                Front-end Developer | Creating Interactive UIs
+              </div>
               <div>&copy; {year} Jason Jonathan Effendi</div>
             </div>
           </div>

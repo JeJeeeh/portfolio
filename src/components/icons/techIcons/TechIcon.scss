@@ -1,6 +1,12 @@
 @use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .techIcon {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
+
+  @include mixins.respond-to("md") {
+    width: 24px;
+    height: 24px;
+  }
 }

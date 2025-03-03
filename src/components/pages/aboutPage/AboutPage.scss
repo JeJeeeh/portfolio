@@ -1,4 +1,5 @@
 @use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .aboutPage {
   position: relative;
@@ -7,15 +8,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   margin: 2rem 0;
+
+  @include mixins.respond-to("md") {
+    gap: 2rem;
+  }
 
   .pageContainer {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
+
+    @include mixins.respond-to("md") {
+      gap: 4rem;
+    }
   }
 
   .aboutContainer {
@@ -25,26 +34,44 @@
     gap: 1rem;
 
     .containerText {
-      grid-column: span 6;
+      grid-column: span 12;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      order: -1;
+
+      @include mixins.respond-to("md") {
+        grid-column: span 6;
+        order: 0;
+      }
 
       .textTitle {
-        font-size: 2rem;
+        font-size: 1rem;
+
+        @include mixins.respond-to("md") {
+          font-size: 2rem;
+        }
       }
       .textDescription {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
         text-align: center;
+
+        @include mixins.respond-to("md") {
+          font-size: 1.2rem;
+        }
       }
     }
 
     .containerItems {
-      grid-column: span 6;
+      grid-column: span 12;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 1rem;
+
+      @include mixins.respond-to("md") {
+        grid-column: span 6;
+      }
 
       .itemContainer {
         border-radius: 10px;
@@ -54,12 +81,21 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+
+        @include mixins.respond-to("md") {
+          font-size: 1rem;
+        }
 
         .itemDot {
           border-radius: 50%;
-          width: 10px;
+          width: 5px;
           aspect-ratio: 1/1;
           background-color: variables.$black;
+
+          @include mixins.respond-to("md") {
+            width: 10px;
+          }
         }
       }
     }

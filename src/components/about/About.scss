@@ -1,70 +1,93 @@
 @use "../../styles/variables";
+@use "../../styles/mixins";
 
 .about {
   background-color: variables.$black;
   color: variables.$white;
-  padding: 5rem 8rem;
+  padding: 2rem;
   border-radius: 8%;
 
-  &__container {
+  @include mixins.respond-to("md") {
+    padding: 5rem 8rem;
+  }
+
+  .aboutContainer {
     display: flex;
     padding: 2rem 0;
-    gap: 2rem;
-  }
+    gap: 1rem;
 
-  &__left {
-    width: 66%;
-    display: flex;
-    flex-direction: column;
-    transition: color 1s ease-in-out;
-
-    &__content {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+    @include mixins.respond-to("md") {
+      gap: 2rem;
     }
 
-    &__accent {
-      transition: color 1s ease-in-out;
-      color: variables.$accent;
-    }
-
-    &__container {
+    .aboutLeft {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      transition: color 1s ease-in-out;
 
-      &__item {
-        grid-column: span 4;
-        background-color: variables.$white;
-        color: variables.$black;
-        border-radius: 10px;
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-        padding: 1rem 0;
+      @include mixins.respond-to("md") {
+        width: 66%;
       }
-    }
 
-    &__small {
-      margin: 2rem 0;
-      font-size: 1.2rem;
-    }
+      .leftContent {
+        font-size: 1rem;
+        margin-bottom: 2rem;
 
-    &__clickable {
-      cursor: pointer;
+        @include mixins.respond-to("md") {
+          font-size: 1.5rem;
+        }
+      }
 
-      &:hover {
+      .leftAccent {
+        transition: color 1s ease-in-out;
         color: variables.$accent;
       }
+
+      .leftContainer {
+        width: 100%;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        display: none;
+
+        @include mixins.respond-to("md") {
+          display: grid;
+        }
+
+        .aboutContainerItem {
+          grid-column: span 4;
+          background-color: variables.$white;
+          color: variables.$black;
+          border-radius: 10px;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          padding: 1rem 0;
+        }
+      }
+
+      .leftSmall {
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        display: none;
+
+        @include mixins.respond-to("md") {
+          display: block;
+        }
+      }
     }
   }
 
-  &__right {
+  .aboutRight {
     width: 37%;
     height: auto;
     border-radius: 10px;
+    display: none;
+
+    @include mixins.respond-to("md") {
+      display: block;
+    }
   }
 }

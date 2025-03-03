@@ -16,7 +16,7 @@ const WhatsappIcon = ({ color }: Props) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 308 308"
       xmlSpace="preserve"
-      className={`icon__${color}`}
+      className={`icon icon__${color}`}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

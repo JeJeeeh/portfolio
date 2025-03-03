@@ -49,30 +49,39 @@ const ProjectCard = ({ title, techStacks, description, slug, link }: Props) => {
     };
   }, []);
 
+  const getShortDescription = (description: string): string => {
+    if (description.length <= 172) {
+      return description;
+    }
+
+    let shortDescription = `${description.substring(0, 172)}...`;
+    return shortDescription;
+  };
+
   return (
-    <div className={`projectCardDisplay`} ref={projectCardRef}>
-      <div className="projectCardDisplay__display">
+    <div className="projectCard" ref={projectCardRef}>
+      <div className="projectCardDisplay">
         <ProjectImage
           slug={slug}
           playAnimation={parentOpacity > 0.9 ? true : false}
           reset={parentOpacity === 0 ? true : false}
         />
       </div>
-      <div className="projectCardDisplay__info">
-        <div className="projectCardDisplay__info__top">
-          <div className="projectCardDisplay__info__title">{title}</div>
-          <div className="projectCardDisplay__info__tech">
+      <div className="projectCardInfo">
+        <div className="infoTop">
+          <div className="infoTitle">{title}</div>
+          <div className="infoTech">
             {techStacks.map((techStack, index) => (
               <IconTooltip key={index} techStack={techStack} />
             ))}
           </div>
-          <div className="projectCardDisplay__info__desc">{description}</div>
+          <div className="infoDesc">{getShortDescription(description)}</div>
         </div>
-        {/* <div className="projectCardDisplay__info__detail">
+        <div className="infoDetail">
           <Link to={link}>
-            <div className="projectCardDisplay__info__button">See more</div>
+            <div className="projectCardDetailButton">See more</div>
           </Link>
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import "./Icon.scss";
+import "../Icon.scss";
 
 interface Props {
   color: string;
@@ -14,7 +14,7 @@ const GithubIcon = ({ color }: Props) => {
       fill="#FFFFFF"
       height={"24px"}
       width={"24px"}
-      className={`icon__${color}`}
+      className={`icon icon__${color}`}
     >
       <g id="SVGRepo_iconCarrier">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="white">

@@ -1,5 +1,33 @@
+import { useEffect } from "react";
 import "./KitchenwaresImage.scss";
-const KitchenwaresImage = () => {
+
+interface Props {
+  playAnimation: boolean;
+  reset: boolean;
+}
+
+const KitchenwaresImage = ({ playAnimation, reset }: Props) => {
+  const steps = [
+    {
+      target: "left",
+      color: "red",
+    },
+    {
+      target: "middle",
+      color: "salmon",
+    },
+  ];
+
+  useEffect(() => {
+    // animation play login
+  }, [playAnimation]);
+
+  useEffect(() => {
+    if (reset) {
+      // reset logic
+    }
+  }, []);
+
   return (
     <svg
       className="kitchenwares"
@@ -8,7 +36,7 @@ const KitchenwaresImage = () => {
       height="100%"
     >
       {/* lines */}
-      <polyline className="kitchenwares__line" points="45,110 45,150 150,150" />
+      <polyline className="kitchenwares__line" points="55,110 55,150 150,150" />
       <line
         className="kitchenwares__line"
         x1={150}
@@ -27,6 +55,8 @@ const KitchenwaresImage = () => {
         x2={150}
         y2={150}
       />
+      {/* animated lines */}
+      <polyline className="animated-line" points="150,170 150,150 120,150" />
       {/* top boxes */}
       <rect
         className="kitchenwares__rect"
