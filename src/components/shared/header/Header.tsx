@@ -6,6 +6,7 @@ import HamburgerIcon from "../../icons/HamburgerIcon";
 import "./Header.scss";
 import { useState } from "react";
 import CloseIcon from "../../icons/CloseIcon";
+import { coreTitle } from "../../../data/core";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,11 +19,9 @@ const Header = () => {
     <nav className="header" id="header">
       <div className="title">
         <Link to={"/"}>
-          <div className="logo">JJE</div>
+          <div className="logo">{coreTitle.title}</div>
         </Link>
-        <div className="tag">
-          Front-end Developer | Creating Interactive UIs
-        </div>
+        <div className="tag">{coreTitle.tag}</div>
       </div>
       <div className="menu">
         <NavLink to={"/"}>

@@ -1,6 +1,8 @@
 import SectionTitle from "../../shared/sectionTitle/SectionTitle";
-import "./AboutPage.scss";
 import { techStacks, tools } from "../../../data/projects";
+import { testimonialsData } from "../../../data/testimonials";
+import "./AboutPage.scss";
+import TestimonialCard from "./testimonials/TestimonialCard";
 
 const AboutPage = () => {
   const titleData = {
@@ -50,7 +52,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        {/* <div className="testimonialsContainer">
+        <div className="testimonialsContainer">
           <div className="testimonialsText">
             <div className="textTitle">Testimonials</div>
             <div className="textDescription">
@@ -63,31 +65,10 @@ const AboutPage = () => {
           </div>
           <div className="testimonialCards">
             {testimonialsData.map((testimonial, index) => (
-              <div className="testimonialCard" key={index}>
-                <div className="cardProfile"></div>
-                <div className="cardInfo">
-                  {testimonial.link && (
-                    <Link to={testimonial.link}>
-                      <div className="cardName cardName__link">
-                        {testimonial.name}
-                      </div>
-                    </Link>
-                  )}
-                  {!testimonial.link && (
-                    <div className="cardName">{testimonial.name}</div>
-                  )}
-                  <div className="cardPosition">
-                    {testimonial.role} @{" "}
-                    <Link to={testimonial.company.link}>
-                      <span className="link">{testimonial.company.name}</span>
-                    </Link>
-                  </div>
-                  <div className="cardDescription">{testimonial.body}</div>
-                </div>
-              </div>
+              <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

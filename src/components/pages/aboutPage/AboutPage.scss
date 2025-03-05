@@ -126,45 +126,6 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 1rem;
-
-      .testimonialCard {
-        background-color: variables.$white;
-        padding: 1rem 2rem;
-        gap: 1rem;
-        grid-column: span 6;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        border-radius: 20px;
-
-        .cardProfile {
-          grid-column: span 3;
-          aspect-ratio: 1/1;
-          background-color: gray;
-          border-radius: 50%;
-        }
-
-        .cardInfo {
-          grid-column: span 9;
-          display: flex;
-          flex-direction: column;
-
-          .cardName {
-            font-size: 1.2rem;
-
-            &__link {
-              text-decoration: underline;
-            }
-          }
-
-          .cardPosition {
-            color: rgb(63, 63, 63);
-
-            .link {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
     }
   }
 }

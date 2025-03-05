@@ -1,0 +1,51 @@
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
+
+.testimonialCard {
+  background-color: variables.$white;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  grid-column: span 12;
+  display: flex;
+  border-radius: 20px;
+
+  .cardProfile {
+    aspect-ratio: 1/1;
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .cardInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .cardName {
+      font-size: 1.2rem;
+
+      &__link {
+        text-decoration: underline;
+      }
+    }
+
+    .cardPosition {
+      color: rgb(63, 63, 63);
+
+      .link {
+        text-decoration: underline;
+      }
+    }
+
+    .cardDivider {
+      margin: 0.5rem 0;
+    }
+
+    .cardDescription {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

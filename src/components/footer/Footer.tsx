@@ -3,6 +3,7 @@ import GithubIcon from "../icons/socialIcons/GithubIcon";
 import LinkedinIcon from "../icons/socialIcons/LinkedinIcon";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
 import "./Footer.scss";
+import { coreTitle } from "../../data/core";
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -42,11 +43,9 @@ const Footer = () => {
         </div>
         <div className="footerBottom">
           <div className="bottomTitle">
-            <div className="bottomTitleLogo">JJE</div>
+            <div className="bottomTitleLogo">{coreTitle.title}</div>
             <div className="bottomTitleTag">
-              <div className="tagDescription">
-                Front-end Developer | Creating Interactive UIs
-              </div>
+              <div className="tagDescription">{coreTitle.tag}</div>
               <div>&copy; {year} Jason Jonathan Effendi</div>
             </div>
           </div>
