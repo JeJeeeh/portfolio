@@ -1,17 +1,17 @@
 import SectionTitle from "../../shared/sectionTitle/SectionTitle";
 import { techStacks, tools } from "../../../data/projects";
 import { testimonialsData } from "../../../data/testimonials";
-import "./AboutPage.scss";
 import TestimonialCard from "./testimonials/TestimonialCard";
+import heroPortrait from "../../../assets/portrait.jpg";
+import "./AboutPage.scss";
+import GameIcon from "../../icons/aboutIcons/GameIcon";
+import MusicIcon from "../../icons/aboutIcons/MusicIcon";
+import GymIcon from "../../icons/aboutIcons/GymIcon";
+import CookingIcon from "../../icons/aboutIcons/CookingIcon";
 
 const AboutPage = () => {
   const titleData = {
     title: "About Me",
-    body: [
-      "Hi, my name is Jason! I'm a Front-end Developer dedicated to",
-      "bring ideas to life with modern web technologies.",
-      "Let's create something amazing together!",
-    ],
   };
 
   return (
@@ -19,6 +19,57 @@ const AboutPage = () => {
       <SectionTitle {...titleData} />
       <div className="pageContainer">
         <div className="aboutContainer">
+          <img src={heroPortrait} alt="Portrait" className="portrait" />
+          <div className="aboutDescription">
+            <div className="aboutDescriptionContainer">
+              <div className="aboutDescriptionHeader">
+                Hi, I'm Jason Jonathan Effendi
+              </div>
+              <div>
+                A software engineer with a passion for building and
+                problem-solving. I thrive on turning ideas into reality through
+                clean, efficient code and intuitive user experiences.
+              </div>
+              <div>
+                My goal is to help people bring their creative ideas to life by
+                developing innovative and scalable solutions. Whether it's
+                crafting interactive applications or optimizing performance, I
+                love the challenge of making technology work seamlessly for
+                users.
+              </div>
+              <div>
+                I'm always eager to learn, collaborate, and create meaningful
+                impact through technology. Let’s build something amazing
+                together!
+              </div>
+            </div>
+            <hr />
+            <div className="aboutHobbiesContainer">
+              <div className="aboutHobbiesDescription">
+                Beyond coding, here are other things that I enjoy
+              </div>
+              <div className="aboutHobbiesCardContainer">
+                <div className="hobbyCard">
+                  <GameIcon />
+                  <div>Gaming</div>
+                </div>
+                <div className="hobbyCard">
+                  <CookingIcon />
+                  <div>Cooking</div>
+                </div>
+                <div className="hobbyCard">
+                  <GymIcon />
+                  <div>Gym</div>
+                </div>
+                <div className="hobbyCard">
+                  <MusicIcon />
+                  <div>Music</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="aboutItemsContainer">
           <div className="containerText">
             <div className="textTitle">Technologies</div>
             <div className="textDescription">
@@ -35,7 +86,7 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-        <div className="aboutContainer">
+        <div className="aboutItemsContainer">
           <div className="containerItems">
             {tools.map((tool, index) => (
               <div className="itemContainer" key={index}>

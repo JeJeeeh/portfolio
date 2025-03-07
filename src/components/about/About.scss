@@ -13,6 +13,7 @@
 
   .aboutContainer {
     display: flex;
+    flex-direction: column;
     padding: 2rem 0;
     gap: 1rem;
 
@@ -20,74 +21,61 @@
       gap: 2rem;
     }
 
-    .aboutLeft {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      transition: color 1s ease-in-out;
+    .aboutTop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      align-items: center;
 
-      @include mixins.respond-to("md") {
-        width: 66%;
-      }
-
-      .leftContent {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+      .topLeft {
+        grid-column: span 2;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        width: 200px;
 
         @include mixins.respond-to("md") {
-          font-size: 1.5rem;
+          width: 200px;
         }
       }
 
-      .leftAccent {
-        transition: color 1s ease-in-out;
-        color: variables.$accent;
-      }
-
-      .leftContainer {
-        width: 100%;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
-        display: none;
+      .topRight {
+        grid-column: span 10;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
 
         @include mixins.respond-to("md") {
-          display: grid;
+          font-size: 1.2rem;
         }
 
-        .aboutContainerItem {
-          grid-column: span 4;
-          background-color: variables.$white;
-          color: variables.$black;
-          border-radius: 10px;
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-          justify-content: center;
-          font-weight: 500;
-          padding: 1rem 0;
+        .rightTitle {
+          @include mixins.respond-to("md") {
+            font-size: 1.5rem;
+          }
         }
-      }
 
-      .leftSmall {
-        margin: 2rem 0;
-        font-size: 1.2rem;
-        display: none;
-
-        @include mixins.respond-to("md") {
-          display: block;
+        .leftAccent {
+          transition: color 1s ease-in-out;
+          color: variables.$accent;
         }
       }
     }
-  }
 
-  .aboutRight {
-    width: 37%;
-    height: auto;
-    border-radius: 10px;
-    display: none;
+    .aboutBottom {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
 
-    @include mixins.respond-to("md") {
-      display: block;
+      .bottomDescription {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .bottomContainer {
+        width: 80%;
+        color: variables.$black;
+      }
     }
   }
 }

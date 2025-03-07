@@ -1,12 +1,10 @@
 import SectionTitle from "../shared/sectionTitle/SectionTitle";
-import portrait from "../../assets/portrait.jpg";
-import "./About.scss";
+import heroPortrait from "../../assets/hero_potrait.png";
 import { Parallax } from "react-scroll-parallax";
 import { useState } from "react";
-import GameIcon from "../icons/aboutIcons/GameIcon";
-import CookingIcon from "../icons/aboutIcons/CookingIcon";
-import GymIcon from "../icons/aboutIcons/GymIcon";
-import MusicIcon from "../icons/aboutIcons/MusicIcon";
+import "./About.scss";
+import { testimonialsData } from "../../data/testimonials";
+import TestimonialCard from "../pages/aboutPage/testimonials/TestimonialCard";
 
 const About = () => {
   const titleData = {
@@ -25,20 +23,18 @@ const About = () => {
         opacity={[0, 1]}
         easing={[0.5, 1, 0, 1]}
       >
-        <div className="aboutLeft">
-          <div className="leftContent">
+        <div className="aboutTop">
+          <img src={heroPortrait} alt="Portrait" className="topLeft" />
+          <div className="topRight">
+            <div className="rightTitle">Hi, I'm Jason Jonathan Effendi!</div>
             <div>
-              Hi, my name is Jason Jonathan Effendi and I am from Indonesia!
+              I'm a software engineer with a passion for creating and solving
+              problems.
             </div>
             <div>
-              I became a software engineer because I love creating and solving
+              My goal is to help bring people's creative ideas to life through
+              technology, and
             </div>
-            <div>problems.</div>
-            <div>
-              One of my goals in life is to help people with their creative
-              ideas to
-            </div>
-            <div>come to life.</div>
             <Parallax
               onProgressChange={(progress) => {
                 if (progress > 0.3) {
@@ -49,30 +45,23 @@ const About = () => {
               }}
             >
               <div className={accent ? accent : ""}>
-                I am excited about the chance to make positive impacts through
+                I'm excited about making a positive impact in the world.
               </div>
-              <div className={accent ? accent : ""}>Technology!</div>
             </Parallax>
           </div>
-          <div className="leftSmall">
-            <div>Here are some things that I enjoy when I am not working</div>
+        </div>
+        <hr />
+        <div className="aboutBottom">
+          <div className="bottomDescription">
+            I've had the pleasure of working with amazing people. Here’s what
+            they think about our collaboration!
           </div>
-          <div className="leftContainer">
-            <div className="aboutContainerItem">
-              <GameIcon /> Gaming
-            </div>
-            <div className="aboutContainerItem">
-              <CookingIcon /> Cooking
-            </div>
-            <div className="aboutContainerItem">
-              <GymIcon /> Fitness
-            </div>
-            <div className="aboutContainerItem">
-              <MusicIcon /> Music
-            </div>
+          <div className="bottomContainer">
+            {testimonialsData.map((testimonial, index) => (
+              <TestimonialCard key={index} testimonial={testimonial} />
+            ))}
           </div>
         </div>
-        <img className="aboutRight" src={portrait} alt="" />
       </Parallax>
     </div>
   );
