@@ -6,21 +6,35 @@ interface Props {
   reset: boolean;
 }
 
-const KitchenwaresImage = ({ playAnimation, reset }: Props) => {
-  const steps = [
-    {
-      target: "left",
-      color: "red",
-    },
-    {
-      target: "middle",
-      color: "salmon",
-    },
-  ];
+const KitchenwaresImage = ({ reset }: Props) => {
+  // const [startX, setStartX] = useState<number>(150);
+  // const [startY, setStartY] = useState<number>(190);
 
-  useEffect(() => {
-    // animation play login
-  }, [playAnimation]);
+  // const startXRef = useRef(startX);
+  // const startYRef = useRef(startY);
+
+  // const steps = [
+  //   {
+  //     target: "left",
+  //     color: "red",
+  //   },
+  //   {
+  //     target: "middle",
+  //     color: "salmon",
+  //   },
+  // ];
+
+  // const LENGTH = 50;
+
+  // useEffect(() => {
+  //   let intervalId: NodeJS.Timeout | null = null;
+  //   let timeoutId: NodeJS.Timeout | null = null;
+
+  //   const animateStep = (
+  //     step: { target: string; color: string },
+  //     duration: number
+  //   ) => {};
+  // }, [playAnimation]);
 
   useEffect(() => {
     if (reset) {

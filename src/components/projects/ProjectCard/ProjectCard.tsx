@@ -3,7 +3,6 @@ import { TechStack } from "../../../data/projects";
 import IconTooltip from "../../icons/IconTooltip/IconTooltip";
 import "./ProjectCard.scss";
 import ProjectImage from "./projectImage/ProjectImage";
-import { Link } from "react-router";
 
 interface Props {
   title: string;
@@ -13,7 +12,7 @@ interface Props {
   link: string;
 }
 
-const ProjectCard = ({ title, techStacks, description, slug, link }: Props) => {
+const ProjectCard = ({ title, techStacks, description, slug }: Props) => {
   const projectCardRef = useRef<HTMLDivElement | null>(null);
   const [parentOpacity, setParentOpacity] = useState<number>(0);
 
@@ -50,11 +49,13 @@ const ProjectCard = ({ title, techStacks, description, slug, link }: Props) => {
   }, []);
 
   const getShortDescription = (description: string): string => {
-    if (description.length <= 172) {
+    const length = 300;
+
+    if (description.length <= length) {
       return description;
     }
 
-    let shortDescription = `${description.substring(0, 172)}...`;
+    let shortDescription = `${description.substring(0, length)}...`;
     return shortDescription;
   };
 
@@ -77,11 +78,11 @@ const ProjectCard = ({ title, techStacks, description, slug, link }: Props) => {
           </div>
           <div className="infoDesc">{getShortDescription(description)}</div>
         </div>
-        <div className="infoDetail">
+        {/* <div className="infoDetail">
           <Link to={link}>
             <div className="projectCardDetailButton">See more</div>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

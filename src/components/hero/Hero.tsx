@@ -1,23 +1,22 @@
-import "./Hero.scss";
-import heroPortrait from "../../assets/hero_potrait.png";
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
 import TransitionTriangle from "../shared/transitionTriangle/TransitionTriangle";
+import "./Hero.scss";
+import MorphSvg from "./MorphSvg";
 
 const Hero = () => {
   const hero: BannerLayer = {
-    className: "heroContainer",
+    className: "heroParalax",
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className="heroContainer">
-        <img src={heroPortrait} alt="" className="heroProfile" />
         <div className={"heroDescription"}>
-          <div>
-            Hi, my name is Jason! I'm a Front-end Developer dedicated to
-          </div>
-          <div>bring ideas to life with modern web technologies.</div>
-          <div>Let's create something amazing together!</div>
+          <div className="heroDescriptionTitle">Hi, my name is Jason!</div>
+          <div>Let's turn your creative ideas into reality!</div>
+        </div>
+        <div className="heroCanvas">
+          <MorphSvg />
         </div>
       </div>
     ),

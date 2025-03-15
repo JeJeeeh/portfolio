@@ -7,35 +7,38 @@
   flex-direction: column;
   height: 90vh;
 
-  .heroContainer {
+  .heroParalax {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
+    padding: 0rem 8rem;
 
-  .heroProfile {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
+    .heroContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
 
-    @include mixins.respond-to("sm") {
-      height: 200px;
-      width: 200px;
-    }
-  }
+      .heroDescription {
+        font-size: 0.8rem;
 
-  .heroDescription {
-    text-align: center;
-    font-size: 0.8rem;
+        @include mixins.respond-to("sm") {
+          font-size: 1rem;
+        }
 
-    @include mixins.respond-to("sm") {
-      font-size: 1rem;
-    }
+        @include mixins.respond-to("md") {
+          font-size: 1.2rem;
+        }
 
-    @include mixins.respond-to("md") {
-      font-size: 1.2rem;
+        .heroDescriptionTitle {
+          font-size: 1.2rem;
+
+          @include mixins.respond-to("md") {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 

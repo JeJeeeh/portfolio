@@ -5,10 +5,11 @@
   background-color: variables.$black;
   color: variables.$white;
   padding: 2rem;
-  border-radius: 8%;
+  border-radius: 10px;
 
   @include mixins.respond-to("md") {
     padding: 5rem 8rem;
+    border-radius: 8%;
   }
 
   .aboutContainer {
@@ -31,7 +32,7 @@
         grid-column: span 2;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        width: 200px;
+        width: 100px;
 
         @include mixins.respond-to("md") {
           width: 200px;
@@ -43,12 +44,15 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        font-size: 0.8rem;
 
         @include mixins.respond-to("md") {
           font-size: 1.2rem;
         }
 
         .rightTitle {
+          font-size: 1rem;
+
           @include mixins.respond-to("md") {
             font-size: 1.5rem;
           }
@@ -68,13 +72,21 @@
       align-items: center;
 
       .bottomDescription {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
+
+        @include mixins.respond-to("md") {
+          font-size: 1.2rem;
+        }
       }
 
       .bottomContainer {
-        width: 80%;
+        width: 100%;
         color: variables.$black;
+
+        @include mixins.respond-to("md") {
+          width: 80%;
+        }
       }
     }
   }

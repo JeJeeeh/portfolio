@@ -4,10 +4,6 @@ import { testimonialsData } from "../../../data/testimonials";
 import TestimonialCard from "./testimonials/TestimonialCard";
 import heroPortrait from "../../../assets/portrait.jpg";
 import "./AboutPage.scss";
-import GameIcon from "../../icons/aboutIcons/GameIcon";
-import MusicIcon from "../../icons/aboutIcons/MusicIcon";
-import GymIcon from "../../icons/aboutIcons/GymIcon";
-import CookingIcon from "../../icons/aboutIcons/CookingIcon";
 
 const AboutPage = () => {
   const titleData = {
@@ -48,7 +44,13 @@ const AboutPage = () => {
               <div className="aboutHobbiesDescription">
                 Beyond coding, here are other things that I enjoy
               </div>
-              <div className="aboutHobbiesCardContainer">
+              <ul className="hobbiesList">
+                <li className="hobbyItem">🎮 Gaming</li>
+                <li className="hobbyItem">🍽️ Cooking</li>
+                <li className="hobbyItem">🏋️ Fitness</li>
+                <li className="hobbyItem">🎵 Music</li>
+              </ul>
+              {/* <div className="aboutHobbiesCardContainer">
                 <div className="hobbyCard">
                   <GameIcon />
                   <div>Gaming</div>
@@ -65,7 +67,7 @@ const AboutPage = () => {
                   <MusicIcon />
                   <div>Music</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

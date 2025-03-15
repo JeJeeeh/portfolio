@@ -82,6 +82,12 @@ export interface ProjectData {
   techStacks: TechStack[];
   description: string;
   link: string;
+  display?: ProjectDisplay;
+}
+
+export interface ProjectDisplay {
+  type: string;
+  url: string;
 }
 
 export const projectsData: { [key: string]: ProjectData } = {
@@ -95,6 +101,10 @@ export const projectsData: { [key: string]: ProjectData } = {
     description:
       "Integrated a new feature for Template Designer, where now users can use and customize SVGs. This feature allows customizations such as colour and shape customization. Shape customization works by the user drag dots around the SVG and its shape will follow based on the interaction.",
     link: "/projects/svg-editor-in-template-designer",
+    display: {
+      type: "video",
+      url: "https://www.loom.com/share/65ccd70ece7244019902f4e252771215?sid=7bd408cc-0764-418d-a0f1-6069793d648a",
+    },
   },
   "portfolio-website": {
     title: "Portfolio Website",

@@ -1,0 +1,11 @@
+@use "../../styles/variables";
+@use "../../styles/mixins";
+
+#morph {
+  background-color: transparent;
+  width: 200px;
+
+  @include mixins.respond-to("md") {
+    width: 400px;
+  }
+}
